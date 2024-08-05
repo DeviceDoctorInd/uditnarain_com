@@ -1,0 +1,87 @@
+/* Loader.css */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent background */
+  z-index: 9999;
+  /* Ensure it covers other content */
+}
+
+.reverse-spinner {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border: 4px solid transparent;
+  border-top-color: #b1040e;
+  border-left-color: #b1040e;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.reverse-spinner::before {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  content: "";
+  border: 4px solid transparent;
+  border-top-color: #b1040e;
+  border-left-color: #b1040e;
+  border-radius: 50%;
+  animation: spinBack 1s linear infinite;
+}
+
+/* 3 DOT LOADER */
+
+.dot-loader {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #f44336;
+  position: relative;
+  animation: grow 1.2s ease-in-out infinite;
+}
+
+.dot-loader--2 {
+  animation-delay: 0.15555s;
+  margin: 0 20px;
+}
+
+.dot-loader--3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinBack {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes grow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
